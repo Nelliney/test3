@@ -1,0 +1,207 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  padding: 0;
+  background-color:#DDC599;
+  font-family: 'Lato', sans-serif;
+}
+
+header, footer {
+  background: #0D1217;
+  color: blanchedalmond;
+  padding: 2rem;
+}
+
+footer {
+    background: #343940;
+}
+
+ol {
+  list-style: none;
+   padding: 0;
+}
+
+.intro {
+  padding: 2rem;
+  column-count: 3;
+}
+
+aside {
+background-color: #EADDBD;
+  padding: 1rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #0D1217;
+  padding: 1rem 2rem;
+  color: blanchedalmond;
+}
+
+.labs {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: #0D1217;
+  padding: 1rem 2rem;
+  color: blanchedalmond;
+}
+
+.labs h2{
+  padding-right: 0.3rem;
+}
+
+.projects ol {
+  height:90%;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start; /* only use for wrapped rows. Otherwise use align-items */
+}
+
+.labs ol {
+  display: grid;
+  grid-template-columns: repeat( 2, 1fr );
+  grid-gap: 2rem;
+}
+
+.projects li, .labs li {
+  background-image: url("../images/1.jpg");
+  background-size: cover;
+  padding: 10px;
+  height:10rem;
+}
+
+.projects li {
+  /* flex-grow | flex-shrink | flex-basis */
+  flex: 1 1 5rem;
+}
+
+a {
+  color: black;
+}
+/* ----------------animation-------------------------------------------------------- */
+
+header, footer, aside{
+  animation-name: appearance0;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+} 
+
+.projects{
+  animation-name: appearance1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.labs{
+  animation-name: appearance2;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.intro{
+  animation-name: appearance3;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appearance0 {
+  0%,
+  50% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes appearance1 {
+  0%,
+  50% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes appearance2 {
+  0%,
+  50% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes appearance3 {
+  0%,
+  50% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* ----------------transition-------------------------------------------------------- */
+
+.projects li, .labs li {
+  transition: all 0.6s linear;
+}
+
+.projects li:hover, .labs li:hover {
+  transform: scale(1.1);
+}
+
+/* ----------------@media-------------------------------------------------------- */
+
+@media screen and (min-width: 600px) {
+  
+  body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  
+  header, footer {
+    grid-column: 1 / 4;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+ }
+
+  .projects, .labs{
+    background-color: #FFFFEF;
+    color: black;
+    display: block;
+  }
+
+  .labs ol{
+    grid-template-columns: repeat( 3, 1fr );
+  }
+  
+}
+
